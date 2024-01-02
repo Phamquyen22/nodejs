@@ -5,3 +5,4 @@ Các kỹ thuật sử dụng:
 - Giỏ hàng sử dụng localStorage, sync cart từ session vào DB của user
 - TÌm kiếm , lọc sản phẩm
 - hiển thị thông tin sản phẩm, đánh giá sản phẩm
+mongoose được em đưa lên online
