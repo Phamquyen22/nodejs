@@ -1,0 +1,88 @@
+<%- include('../playout/header.ejs') %>
+        <!-- END TOPBAR -->
+        <!-- START CONTAINER -->
+        <div class="page-container row-fluid container-fluid">
+            <!-- SIDEBAR - START -->
+           
+            <%- include('../playout/menu.ejs') %>
+
+
+            <!--  SIDEBAR - END -->
+            <!-- START CONTENT -->
+            <section id="main-content" class=" ">
+                <section class="wrapper main-wrapper row" style=''>
+                    <div class='col-xs-12'>
+                        <div class="page-title">
+                            <div class="pull-left">
+                                <h1 class="title"></h1>
+                            </div>
+                            <div class="pull-right hidden-xs">
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12">
+                        <section class="box ">
+                            <header class="panel_header">
+                                <h2 class="title pull-left">Thông tin đơn hàng</h2>
+                                <div class="actions panel_actions pull-right">
+                                    <a class="box_toggle fa fa-chevron-down"></a>
+                                   
+                                </div>
+                            </header>
+                            <div class="content-body">
+                                <div class="row">
+                                    <% if(success_msg != ''){ %> 
+                                        <div class="alert alert-success"><%= success_msg%></div>
+                                   <% } %>
+                                    <div class="col-xs-12">
+                                        <!-- ********************************************** -->
+                                        <h4>Người mua hàng:<span> <%=donhang.user.firstName %>    <%=donhang.user.lastName %> </span></h4>
+                                        <h4>Số điện thoại:<span> <%=donhang.user. phoneNumber%></span> </h4>
+                                        <h4>Địa chỉ :<span> <%=donhang.user. address%></span> </h4>
+                                        <h4>Email :<span> <%=donhang.user. email%></span> </h4>
+                                        <h4>Tình trạng đơn hàng :<span> <%=donhang.tinhtrang%></span> </h4>
+                                        <table id="example" class="display table table-hover table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th>Tên sản phẩm</th>
+                                                    <th>Giá sản phẩm</th>
+                                                    <th>Số lượng</th>
+                                                    <th>Ảnh sản phẩm</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <% order_cart.forEach(function(itemsp, index) { %>
+                                                <tr>
+                                                    <td><%= itemsp.name %></td>
+                                                    <td><%= itemsp.price %></td>
+                                                    <td><%= itemsp.buyCounts %></td>
+                                                    <td><img src="/images/product/<%= itemsp.images%>" width="100px" height="100px" alt=""></td>
+                                                </tr>
+                                                
+                                                <%})%>
+                                                <a href="/admin/cart/<%= donhang._id %>/Xac-nhan.html">Xác nhận đơn hàng</a> | 
+                                                <a href="/admin/cart/<%= donhang._id %>/hoan-thanh.html">Hoàn thành đơn</a>
+                                            </tbody>
+                                        </table>
+                                        <!-- ********************************************** -->
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </section>
+            <!-- END CONTENT -->
+            <div class="chatapi-windows ">
+
+            </div>
+
+            <%- include('../playout/footer.ejs') %>
+            <script src="/TT_Admin/assets/plugins/datatables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+            <script src="/TT_Admin/assets/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js" type="text/javascript"></script>
+            <script src="/TT_Admin/assets/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js" type="text/javascript"></script>
+            <script src="/TT_Admin/assets/plugins/datatables/extensions/Responsive/bootstrap/3/dataTables.bootstrap.js" type="text/javascript"></script>

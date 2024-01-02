@@ -1,0 +1,16 @@
+{
+    "_id": {
+        "$oid": "63db7c41b97d8b31f436e5b8"
+    },
+    "list": [
+        "Shiro",
+        "Mob",
+        "Crepp",
+        "Zara",
+        "Levis",
+        "Gucci",
+        "Dolce & Gabbana",
+        "Others"
+    ],
+    "__v": 0
+}
